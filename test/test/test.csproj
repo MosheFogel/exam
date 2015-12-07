@@ -96,6 +96,7 @@
     <Compile Include="Models\itemReview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Review1.cs" />
     <Compile Include="View\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
