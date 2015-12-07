@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Xml;
 
 namespace test
 {
@@ -14,14 +15,26 @@ namespace test
        
             return url;
          }
-    
-        public string GetResponse(string url)
+
+        public HttpWebResponse GetResponse(string url)
         {
             HttpWebRequest webrequest = null;
-            string completeUri = String.Format(url, AppId, "image", "sushi");
+            string completeUri = String.Format(url, "image", "sushi");
             webrequest = (HttpWebRequest)webrequest.Create(url);
             HttpWebResponse webResponse = null;
             webResponse = (HttpWebResponse)webResponse.GetResponseHeader();
+            return webResponse;
+        }
+
+        public List<T> ReviewList<T>(HttpWebResponse webResponse)
+        {
+            List<T> l = new List<T>();
+            XmlReader xmlReader = null;
+            xmlReader = XmlReader.Create(webResponse.GetResponseStream());
+
+
+
+            return l;
         }
     }
 }
